@@ -6,16 +6,16 @@ import React from 'react'
 function Footer() {
   return (
     <>
-    <div className="row ">
+    <div className="row border-top mt-5" >
       <div className="col-md-1"></div>
       <div className="col-md-4">
-        <h3 className='text-success mt-5'>RECIPO</h3>
+        <h3 className='mt-5' style={{color:'#003c36'}}>RECIPO</h3>
 
         <p>Home</p>
         <p>About</p>
       </div>
       <div className="col-md-5">
-        <h4 className='mt-5 text-success'>Contact Us..</h4>
+        <h4 className='mt-5'style={{color:'#003c36'}}>Contact Us..</h4>
         <div className='d-flex mt-3'>
         <input type="text" className='form-control w-50 bg-transparent border border rounded' placeholder='Email'/>
         
