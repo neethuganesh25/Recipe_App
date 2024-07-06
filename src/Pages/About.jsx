@@ -1,10 +1,13 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function About() {
   return (
     
    <>
+    <Header/>
    <div className="row">
     <div className="col-md-1"></div>
     <div className="col-md-4">
@@ -49,7 +52,7 @@ function About() {
             </div>
             <div className="col-md-3">
             <Card className='mt-5' style={{ width: '80%' }}>
-      <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2017/06/30/20/55/mushrooms-2459679_640.jpg" />
+      <Card.Img variant="top" src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=600" />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
         <Card.Text>
@@ -67,7 +70,54 @@ function About() {
         
         <div className="col-md-1"></div>
     
-   
+        <div className="row">
+        
+        <div className="col-md-2"></div>
+           <div className="col-md-3">
+           <Card className='mt-5 ' style={{ width: '80%' }}>
+     <Card.Img variant="top" src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600" />
+     <Card.Body>
+       <Card.Title>Card Title</Card.Title>
+       <Card.Text>
+         Some quick example text to build on the card title and make up the
+         bulk of the card's content.
+       </Card.Text>
+       
+     </Card.Body>
+   </Card>
+           </div>
+           <div className="col-md-3">
+           <Card className='mt-5 ' style={{ width: '80%' }}>
+     <Card.Img variant="top" src="https://images.pexels.com/photos/2116094/pexels-photo-2116094.jpeg?auto=compress&cs=tinysrgb&w=600" />
+     <Card.Body>
+       <Card.Title>Card Title</Card.Title>
+       <Card.Text>
+         Some quick example text to build on the card title and make up the
+         bulk of the card's content.
+       </Card.Text>
+       
+     </Card.Body>
+   </Card>
+           </div>
+           <div className="col-md-3">
+           <Card className='mt-5' style={{ width: '80%' }}>
+     <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2017/06/30/20/55/mushrooms-2459679_640.jpg" />
+     <Card.Body>
+       <Card.Title>Card Title</Card.Title>
+       <Card.Text>
+         Some quick example text to build on the card title and make up the
+         bulk of the card's content.
+       </Card.Text>
+       
+     </Card.Body>
+   </Card>
+           </div>
+           
+           
+       </div>
+
+       
+       <Footer/>
    </>
   )
 }
