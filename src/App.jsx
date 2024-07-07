@@ -9,18 +9,31 @@ import MainHome from './Pages/MainHome'
 
 
 
+import Meal from './components/Meal'
+import Recipe from './components/Recipe'
+import Login from './components/Login'
+import Register from './components/Register'
+
+
 function App() {
  
   return (
     <>
-      <Header/>
+    
         <Routes>
-          <Route path='/' element={<Home/>}/>
+        <Route path="/" element={<Register/>}  />
+        <Route path="/register" element={<Login/>}  />
+        <Route path="/home" element={<Home/>}  />
            <Route path='/about' element={<About/>}/>
+
         <Route path='/mainhome' element={<MainHome/>}/>
+
+           <Route path='/recipes' element={<Meal/>}/>
+           <Route  path="/:recipeId" element={<Recipe/>}/>
+
           </Routes>
+       
         
-       <Footer/> 
     </>
   )
 }

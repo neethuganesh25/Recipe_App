@@ -23,6 +23,7 @@ function Header() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" style={{ width: "100%" }}>
             <Nav className="ms-auto d-flex justify-content-center align-items-center">
+
               <Nav.Link href="">
                 <h5  className=" fw-bold  mt-md-2 me-md-5">Home</h5>
               </Nav.Link>
@@ -33,11 +34,23 @@ function Header() {
               </Nav.Link>
               <Nav.Link href="">
                 <h5 className=" fw-bold t mt-md-2 me-md-5">
+
+              <Nav.Link href="home">
+                <h5  className=" fw-bold  mt-md-2 me-md-2">Home</h5>
+              </Nav.Link>
+              <Nav.Link href="about">
+                <h5 className=" fw-bold  mt-md-2 me-md-2">
+                  About Us
+                </h5>
+              </Nav.Link>
+              <Nav.Link href="recipes">
+                <h5 className=" fw-bold t mt-md-2 me-md-2">
+
                   Recipes
                 </h5>
               </Nav.Link>
-              <Nav.Link href="#login">
-              <Button variant="outline-dark" style={{}}>Login</Button>{' '}
+              <Nav.Link href="/">
+              <Button variant="outline-dark" style={{}}>Logout</Button>{' '}
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

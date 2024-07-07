@@ -1,11 +1,15 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 
 
 function Home() {
   return (
     <>
+     <Header/>
     <section id='home'>
     <div className="row mb-5">
       <div className="col-md-1"></div>
@@ -13,7 +17,7 @@ function Home() {
         <h1 className='mt-5 fs-1 fw-bold'>Huge Selection of Delicios Recipes</h1>
         <p className='mt-5'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, similique quidem adipisci repudiandae libero necessitatibus sunt perspiciatis modi. Esse blanditiis incidunt repellendus sequi illo deserunt iure quisquam vitae explicabo aliquid!</p>
         <div className='d-flex mt-5'>
-        <Button variant="dark w-25">Explore Latest</Button>
+         <Button variant="dark w-25" >Explore Latest</Button>
         <Button variant="outline-dark w-25 ms-3 ">View Random</Button>{' '}
         </div>
       </div>
@@ -133,7 +137,7 @@ function Home() {
     </div>
     
     </section>
-    
+    <Footer/>
    </>
   )
 }
