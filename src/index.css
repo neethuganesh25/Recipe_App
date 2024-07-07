@@ -1,4 +1,22 @@
 *{
+
+    margin: 0px;
+    padding: 0px;
+  
+
+}
+/* .background-image{
+    background-image:url('https://img.freepik.com/free-photo/overhead-view-blank-spiral-notepad-with-italian-pasta-ingredients-against-black-textured-backdrop_23-2148090997.jpg?size=626&ext=jpg&ga=GA1.1.309933886.1678615408&semt=ais_user') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 80vh;
+    
+} */
+body{
+    font-family: "Arsenal SC", sans-serif;
+    overflow-x: hidden;
+
   margin: 0px;
   padding: 0px;
   width: 100%;
@@ -188,5 +206,6 @@ form .register-link{
 }
 .register-link p a:hover{
   text-decoration: underline;
+
 }
 

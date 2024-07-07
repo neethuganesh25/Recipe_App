@@ -5,6 +5,9 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Home from './Pages/Home'
 import About from './Pages/About'
+import MainHome from './Pages/MainHome'
+
+
 
 import Meal from './components/Meal'
 import Recipe from './components/Recipe'
@@ -22,8 +25,12 @@ function App() {
         <Route path="/register" element={<Login/>}  />
         <Route path="/home" element={<Home/>}  />
            <Route path='/about' element={<About/>}/>
+
+        <Route path='/mainhome' element={<MainHome/>}/>
+
            <Route path='/recipes' element={<Meal/>}/>
            <Route  path="/:recipeId" element={<Recipe/>}/>
+
           </Routes>
        
         
