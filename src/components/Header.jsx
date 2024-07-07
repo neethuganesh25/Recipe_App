@@ -24,16 +24,6 @@ function Header() {
           <Navbar.Collapse id="basic-navbar-nav" style={{ width: "100%" }}>
             <Nav className="ms-auto d-flex justify-content-center align-items-center">
 
-              <Nav.Link href="">
-                <h5  className=" fw-bold  mt-md-2 me-md-5">Home</h5>
-              </Nav.Link>
-              <Nav.Link href="">
-                <h5 className=" fw-bold  mt-md-2 me-md-5">
-                  About Us
-                </h5>
-              </Nav.Link>
-              <Nav.Link href="">
-                <h5 className=" fw-bold t mt-md-2 me-md-5">
 
               <Nav.Link href="home">
                 <h5  className=" fw-bold  mt-md-2 me-md-2">Home</h5>
