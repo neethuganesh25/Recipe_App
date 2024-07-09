@@ -1,8 +1,9 @@
-import { faHeart, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faHeart, faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
-import { Button, Card } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -25,8 +26,9 @@ function RecipeCard() {
           bulk of the card's content.
         </Card.Text>
         <div className='d-flex justify-content-between'>
-        <Button variant="outline-danger"><FontAwesomeIcon icon={faTrash} /></Button>{' '}
-        <Button variant="outline-success"><FontAwesomeIcon icon={faHeart} /></Button>{' '}
+        <Button variant="outline-primary me-3 w-25"><FontAwesomeIcon icon={faTrash} /></Button>{' '}
+        <Button variant="outline-info me-3 w-25"><FontAwesomeIcon icon={faPenToSquare}  /></Button>
+        <Button variant="outline-success w-25"><FontAwesomeIcon icon={faHeart} /></Button>{' '}
     
         </div>
         
@@ -47,11 +49,21 @@ function RecipeCard() {
         <Modal.Body>
           <div className="row">
             <div className="col-md-6">
-              <img src="http://1.bp.blogspot.com/-DiSDedfF4qU/TWVxPs0Gi-I/AAAAAAAAArY/sPF0QQiO7Q8/s1600/IMG_1471.JPG" alt="no image"  height={'300px'} />
+              <img src="http://1.bp.blogspot.com/-DiSDedfF4qU/TWVxPs0Gi-I/AAAAAAAAArY/sPF0QQiO7Q8/s1600/IMG_1471.JPG" alt="no image"  height={'300px'} width={'100%'} />
             </div>
             <div className="col-md-6">
-              <h4>kjgjgj</h4>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad laborum itaque quibusdam animi eveniet? Velit accusantium illum assumenda. Vel natus in officiis cum corporis. Explicabo ex fugit temporibus inventore fuga?</p>
+              <h4>Cooking Instructions</h4>
+              <p className='p-2' style={{textAlign:'justify'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad laborum itaque quibusdam animi eveniet? Velit accusantium illum assumenda. Vel natus in officiis cum corporis. Explicabo ex fugit temporibus inventore fuga?
+                <h6 className='mt-3'> Video Link:</h6>
+              </p>
+              <h6>Ingrediants:</h6>
+              <p>
+              1)ffsfs
+              2)sfsfs
+              3)kj
+
+              </p>
+
             </div>
           </div>
         </Modal.Body>
