@@ -2,8 +2,10 @@ import React from 'react'
 import Card from 'react-bootstrap/Card';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Ratings from './Ratings';
 
 function About() {
+  const cardRatings = [4, 5, 3, 4, 5, 4];
   return (
     
    <>
@@ -30,8 +32,10 @@ function About() {
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
         <Card.Text>
+      
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
+          <Ratings rating={cardRatings[2]} />
         </Card.Text>
         
       </Card.Body>
@@ -46,7 +50,7 @@ function About() {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        
+        <Ratings rating={cardRatings[3]} />
       </Card.Body>
     </Card>
             </div>
@@ -59,7 +63,7 @@ function About() {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        
+        <Ratings rating={cardRatings[4]} />
       </Card.Body>
     </Card>
             </div>
@@ -82,7 +86,7 @@ function About() {
          Some quick example text to build on the card title and make up the
          bulk of the card's content.
        </Card.Text>
-       
+       <Ratings rating={cardRatings[3]} />
      </Card.Body>
    </Card>
            </div>
@@ -95,7 +99,7 @@ function About() {
          Some quick example text to build on the card title and make up the
          bulk of the card's content.
        </Card.Text>
-       
+       <Ratings rating={cardRatings[2]} />
      </Card.Body>
    </Card>
            </div>
@@ -108,7 +112,7 @@ function About() {
          Some quick example text to build on the card title and make up the
          bulk of the card's content.
        </Card.Text>
-       
+       <Ratings rating={cardRatings[2]} />
      </Card.Body>
    </Card>
            </div>
@@ -116,7 +120,7 @@ function About() {
            
        </div>
 
-       
+       <Ratings/>
        <Footer/>
    </>
   )

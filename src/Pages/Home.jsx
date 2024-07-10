@@ -4,11 +4,19 @@ import Card from 'react-bootstrap/Card';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
-
-
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  FacebookIcon,
+  TwitterIcon,
+  WhatsappIcon
+} from 'react-share';
 function Home() {
+  const Url = window.location.href;
   return (
     <>
+    
      <Header/>
     <section id='home'>
     <div className="row mb-5">
@@ -17,7 +25,7 @@ function Home() {
         <h1 className='mt-5 fs-1 fw-bold'>Huge Selection of Delicios Recipes</h1>
         <p className='mt-5'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, similique quidem adipisci repudiandae libero necessitatibus sunt perspiciatis modi. Esse blanditiis incidunt repellendus sequi illo deserunt iure quisquam vitae explicabo aliquid!</p>
         <div className='d-flex mt-5'>
-         <Button variant="dark w-25" >Explore Latest</Button>
+         <Link to={'/recipes'}><Button variant="dark w-25" >Explore Latest</Button></Link>
         <Button variant="outline-dark w-25 ms-3 ">View Random</Button>{' '}
         </div>
       </div>
@@ -36,6 +44,7 @@ function Home() {
       <Card.Img variant="top" src="https://a.cdn-hotels.com/gdcs/production28/d353/1a4556f8-80ec-4c9d-b5fe-a067f8205db8.jpg" />
       <Card.Body>
         <Card.Title>Thai</Card.Title>
+        
       </Card.Body>
     </Card>
 
@@ -100,6 +109,17 @@ function Home() {
       <Card.Body>
         <Card.Title>Lemon Garlic Baked Chicken</Card.Title>
       </Card.Body>
+      <div className="d-flex justify-content-around mt-3">
+                  <FacebookShareButton url={Url} quote="Lemon Garlic Baked Chicken">
+                    <FacebookIcon size={25} round />
+                  </FacebookShareButton>
+                  <TwitterShareButton url={Url} title="Lemon Garlic Baked Chicken">
+                    <TwitterIcon size={25} round />
+                  </TwitterShareButton>
+                  <WhatsappShareButton url={Url} title="Lemon Garlic Baked Chicken">
+                    <WhatsappIcon size={25} round />
+                  </WhatsappShareButton>
+                </div>
     </Card>
 
 
@@ -108,18 +128,51 @@ function Home() {
       <Card.Body>
         <Card.Title>Lemon Garlic Baked Chicken</Card.Title>
       </Card.Body>
+      <div className="d-flex justify-content-around mt-3">
+                  <FacebookShareButton url={Url} quote="Lemon Garlic Baked Chicken">
+                    <FacebookIcon size={25} round />
+                  </FacebookShareButton>
+                  <TwitterShareButton url={Url} title="Lemon Garlic Baked Chicken">
+                    <TwitterIcon size={25} round />
+                  </TwitterShareButton>
+                  <WhatsappShareButton url={Url} title="Lemon Garlic Baked Chicken">
+                    <WhatsappIcon size={25} round />
+                  </WhatsappShareButton>
+                </div>
     </Card>
     <Card className='mt-4 shadow ms-4' style={{ width: '350px', height:'350px'}}>
       <Card.Img variant="top" src="https://cheapandcheerfulcooking.com/wp-content/uploads/2021/01/chinese-fried-noodles-basic-recipe-2.jpg"  height={'350px'}/>
       <Card.Body>
         <Card.Title>Chinese Fried Noodles</Card.Title>
       </Card.Body>
+      <div className="d-flex justify-content-around mt-3">
+                  <FacebookShareButton url={Url} quote="Lemon Garlic Baked Chicken">
+                    <FacebookIcon size={25} round />
+                  </FacebookShareButton>
+                  <TwitterShareButton url={Url} title="Lemon Garlic Baked Chicken">
+                    <TwitterIcon size={25} round />
+                  </TwitterShareButton>
+                  <WhatsappShareButton url={Url} title="Lemon Garlic Baked Chicken">
+                    <WhatsappIcon size={25} round />
+                  </WhatsappShareButton>
+                </div>
     </Card>
     <Card className='mt-4 shadow ms-4' style={{ width: '350px' , height:'350px'}}>
       <Card.Img variant="top" src="https://cdn.shopify.com/s/files/1/0551/3055/4471/files/italian-black-rice-recipes.jpg?v=1719902990"  height={'350px'}/>
       <Card.Body>
         <Card.Title>Italian Eggplant Recipe</Card.Title>
       </Card.Body>
+      <div className="d-flex justify-content-around mt-3">
+                  <FacebookShareButton url={Url} quote="Lemon Garlic Baked Chicken">
+                    <FacebookIcon size={25} round />
+                  </FacebookShareButton>
+                  <TwitterShareButton url={Url} title="Lemon Garlic Baked Chicken">
+                    <TwitterIcon size={25} round />
+                  </TwitterShareButton>
+                  <WhatsappShareButton url={Url} title="Lemon Garlic Baked Chicken">
+                    <WhatsappIcon size={25} round />
+                  </WhatsappShareButton>
+                </div>
     </Card>
     
       </div>
@@ -131,8 +184,7 @@ function Home() {
       <div className="col-md-10 mt-5 d-flex justify-content-center align-items-center flex-column ">
         <h1 className='text-center'>Publish Your recipe for free</h1>
         <p className='text-center mt-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-        <Button variant="dark w-25 my-4">Submit Recipe</Button>
-      </div>
+        <Button variant="dark w-25 my-4 ms-5">Submit Recipe</Button></div>
       <div className="col-md-1"></div>
     </div>
     

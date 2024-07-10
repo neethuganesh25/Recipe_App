@@ -1,10 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+
 import ReacipeIndex from "./RecipeIndex";
 import MealItem from "./Mealitem";
-import Header from "./Header";
-import Footer from "./Footer";
 const Meal = () => {
     const [search,setSearch]=useState();
     const [show,setShow]=useState(false);
@@ -26,16 +25,14 @@ const Meal = () => {
     }
 return (
     <>
-     <Header/>
         <div className="main">
             <div className="heading">
                 <h1>Search Your Food Recipe</h1>
                 <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque tempore unde sed ducimus voluptates illum!</h4>
             </div>
             <div className="searchBox">
-                <input type="search " className="search-bar" onChange={e=> setSearch(e.target.value)} onKeyPress={searchRecipe}/>
+                <input type="search" className="search-bar" onChange={e=> setSearch(e.target.value)} onKeyPress={searchRecipe}/>
             </div>
-        
             <div className="container">
                 {
                     show ?<MealItem data={item} /> :"Not Found"
@@ -47,7 +44,6 @@ return (
             </div>
             
         </div>
-        <Footer/>
     </>
 )
 }
