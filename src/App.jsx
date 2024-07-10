@@ -13,6 +13,7 @@ import Meal from './components/Meal'
 import Recipe from './components/Recipe'
 import Login from './components/Login'
 import Register from './components/Register'
+import Category from './components/Category'
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
 
            <Route path='/recipes' element={<Meal/>}/>
            <Route  path="/:recipeId" element={<Recipe/>}/>
+           <Route  path="/category" element={<Category/>}/>
 
           </Routes>
        

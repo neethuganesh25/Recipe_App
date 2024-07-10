@@ -1,7 +1,7 @@
 import { faBowlFood, faUpload } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
-import { Button } from 'react-bootstrap'
+import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 
@@ -17,15 +17,15 @@ function Add() {
   return (
     <>
     <div className='d-flex mx-5'>
-      <h5 className='fs-4' >Add new Recipe Here </h5>
-      <Button variant="light rounded border-danger ms-3" onClick={handleShow}> <FontAwesomeIcon icon={faUpload}style={{color:'oraange'}} beat /></Button>{' '}
+      <h5 className='fs-5 w-25'>Add new Recipe Here</h5>
+      <Button variant="light rounded border-danger ms-2" style={{width:'7%' ,height:'40px'}} onClick={handleShow}> <FontAwesomeIcon icon={faUpload} beat /></Button>{' '}
     </div>
 
 
-    <Modal  show={show} onHide={handleClose}>
+    <Modal  show={show} onHide={handleClose} size='lg'>
       
         <Modal.Header  closeButton>
-          <Modal.Title className='text-dark fs-3' >Upload New Recipe <FontAwesomeIcon icon={faBowlFood} beatFade style={{color: "#f51a0a",}} className='ms-2' /></Modal.Title >
+          <Modal.Title className='text-dark fs-3' >Upload New Recipe <FontAwesomeIcon icon={faBowlFood} beatFade style={{color: "#f51a0a",}} className='' /></Modal.Title >
         </Modal.Header>
         <Modal.Body className='bg-tranparent'>
         <p className='text-danger fs-5 fw-bold'>Plz Fill the following Details</p>
@@ -41,10 +41,10 @@ function Add() {
         </Modal.Body>
         <Modal.Footer>
         
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary w-25" onClick={handleClose}>
             Cancel
           </Button>
-          <Button variant="success" onClick={handleClose}>
+          <Button variant="success w-25" onClick={handleClose}>
             Submit Recipe
           </Button>
         </Modal.Footer>
