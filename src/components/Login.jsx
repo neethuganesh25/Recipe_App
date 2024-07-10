@@ -59,7 +59,7 @@ function Login() {
     return (
         <>
 
-  <div className="row">
+  <div className="row  " style={{backgroundColor:'rgb(145, 238, 145)'}}>
   <div className="col background">
     </div>
   <div className="col">
