@@ -21,8 +21,8 @@ function App() {
     <>
     
         <Routes>
-        <Route path="/" element={<Register/>}  />
-        <Route path="/register" element={<Login/>}  />
+        <Route path="/" element={<Login />} />
+       <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home/>}  />
         <Route path='/about' element={<About/>}/>
         <Route exact path="/:recipeId" element={<Recipe/>}/>

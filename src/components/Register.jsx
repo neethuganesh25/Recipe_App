@@ -1,51 +1,67 @@
-import { faLock, faUser } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { faEnvelope, faMobile, faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Register() {
-    const [username, setUsername] = useState('');
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [mobile, setMobile] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
+    const validateEmail = (email) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    };
+
+    const validateMobile = (mobile) => {
+        return mobile.length === 10;
+    };
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        setIsLoading(true);
         setError('');
 
-        // Mock authentication function
-        const mockLoginUser = (username, password) => {
-            // Simulate a user login process
-            const mockUsers = [
-                { username: 'user@gmail.com', password: '12345' },
-                { username: 'test@gmail.com', password: '54321' }
-            ];
-
-            const user = mockUsers.find(
-                (u) => u.username === username && u.password === password
-            );
-
-            if (user) {
-                return Promise.resolve(user);
-            } else {
-                return Promise.reject(new Error('Invalid login credentials'));
-            }
-        };
-
-        try {
-            const user = await mockLoginUser(username, password);
-            console.log('Login successful:', user);
-            toast.success('Login successful!');
-            navigate('/home');
-        } catch (error) {
-            setError(error.message);
-            toast.error('Invalid login credentials');
-        } finally {
-            setIsLoading(false);
+        if (name.trim() === '') {
+            setError('Name is required');
+            return;
         }
+
+        if (!validateEmail(email)) {
+            setError('Invalid email format');
+            return;
+        }
+
+        if (!validateMobile(mobile)) {
+            setError('Mobile number must be 10 digits');
+            return;
+        }
+
+        // Additional validation for password
+        if (password.length < 8) {
+            setError('Password must be at least 8 characters long');
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            setError('Passwords do not match');
+            return;
+        }
+
+        setIsLoading(true);
+
+        // Mock registration process
+        setTimeout(() => {
+            console.log('User Registered:', { name, email, mobile, password });
+            toast.success('Registration successful!');
+            navigate('/');
+            setIsLoading(false);
+        }, 1000);
     };
 
     return (
@@ -53,26 +69,49 @@ function Register() {
             <div className="row" style={{ backgroundColor: 'rgb(145, 238, 145)' }}>
                 <div className="col background"></div>
                 <div className="col">
-                    <div className="container-fluid">
+                    <div className="container-fluid ">
                         <div className="wrapper">
                             <div className="form-box login">
                                 {error && <p className="error text-center">{error}</p>}
                                 <form onSubmit={handleSubmit}>
-                                    <h1>Login</h1>
+                                    <h1>Register</h1>
                                     <div className="input-box">
                                         <input
                                             type="text"
-                                            placeholder="Username"
+                                            placeholder="Name"
                                             id="name"
-                                            value={username}
-                                            onChange={(e) => setUsername(e.target.value)}
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
                                             required
                                         />
                                         <FontAwesomeIcon className="icons" icon={faUser} />
                                     </div>
                                     <div className="input-box">
                                         <input
-                                            className="form-control mt-3"
+                                            type="email"
+                                            placeholder="Email"
+                                            id="email"
+                                            className="mt-3"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            required
+                                        />
+                                        <FontAwesomeIcon className="icons mt-5" icon={faEnvelope} />
+                                    </div>
+                                    <div className="input-box">
+                                        <input
+                                            className="form-control mt-4 p-2"
+                                            type="number"
+                                            placeholder="Mobile"
+                                            id="mobile"
+                                            value={mobile}
+                                            onChange={(e) => setMobile(e.target.value)}
+                                            required
+                                        />
+                                        <FontAwesomeIcon className="icons mt-4" icon={faMobile} />
+                                    </div>
+                                    <div className="input-box">
+                                        <input
                                             type="password"
                                             placeholder="Password"
                                             id="password"
@@ -80,25 +119,27 @@ function Register() {
                                             onChange={(e) => setPassword(e.target.value)}
                                             required
                                         />
-                                        <FontAwesomeIcon className="icons" icon={faLock} />
                                     </div>
-                                    <div className="remember-forget">
-                                        <label>
-                                            <input type="checkbox" /> Remember Me
-                                        </label>
-                                        <a href="#">Forget Password?</a>
+                                    <div className="input-box">
+                                        <input
+                                            type="password"
+                                            placeholder="Confirm Password"
+                                            id="confirmPassword"
+                                            value={confirmPassword}
+                                            onChange={(e) => setConfirmPassword(e.target.value)}
+                                            required
+                                        />
                                     </div>
                                     <button
                                         className="btn btn-light border rounded-5"
                                         type="submit"
                                         disabled={isLoading}
                                     >
-                                        {isLoading ? 'Logging in...' : 'Login'}
+                                        {isLoading ? 'Registering...' : 'Register'}
+                                       
                                     </button>
                                     <div className="register-link">
-                                        <p>
-                                            Don't have an account? <Link to="/register">Register</Link>
-                                        </p>
+                                        <p>Already registered? <Link to="/">Login</Link></p>
                                     </div>
                                 </form>
                             </div>
