@@ -45,6 +45,23 @@ margin: 0;
 }
 .background{
 background-image: url('https://insanelygoodrecipes.com/wp-content/uploads/2021/12/Spaghetti-Bolognese-with-Basil-in-a-Plate.jpg');
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media (max-width: 768px) {
+    .background {
+        background-size: 100%;
+         background-position: center;
+         background-size: cover;/* Adjust for smaller screens to ensure image is fully visible */
+    }
+}
+
+@media (max-width: 768px) {
+    .form-box {
+        width: 80%; /* Adjust width for smaller screens */
+        
+    }
 }
 
 .wrapper{

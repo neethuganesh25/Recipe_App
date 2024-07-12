@@ -9,14 +9,13 @@ import Register from './components/Register'
 import MainHome from './Pages/MainHome'
 import Login from './components/Login'
 import Meal from './components/Meal'
-
 import Category from './components/Category'
-
-
 import Recipe from './components/Recipe'
 
+
+
 function App() {
- 
+  
   return (
     <>
     
@@ -30,7 +29,7 @@ function App() {
         <Route path='/mainhome' element={<MainHome/>}/>
         <Route  path="/category" element={<Category/>}/>
         </Routes>
-       
+        
         
     </>
   )

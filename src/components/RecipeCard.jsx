@@ -9,7 +9,7 @@ import { deleteRecipeApi } from '../../services/allApi';
 
 
 
-function RecipeCard({displayRecipe,setdeleteRecipeStatus}) {
+function RecipeCard({ displayRecipe, onDelete }) {
 
   const [lgShow, setLgShow] = useState(false);
     // const [show, setShow] = useState(false);
@@ -35,7 +35,7 @@ function RecipeCard({displayRecipe,setdeleteRecipeStatus}) {
        
         </Card.Text>
         <div className='d-flex justify-content-between'>
-        <Button variant="outline-primary me-3 w-25" onClick={()=>handleDelete(displayRecipe?.id)}><FontAwesomeIcon icon={faTrash} /></Button>{' '}
+        <Button variant="outline-primary me-3 w-25" onClick={onDelete}><FontAwesomeIcon icon={faTrash} /></Button>{' '}
         <Button variant="outline-info me-3 w-25"><FontAwesomeIcon icon={faPenToSquare}  /></Button>
         <Button variant="outline-success w-25"><FontAwesomeIcon icon={faHeart} /></Button>{' '}
     

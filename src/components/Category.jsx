@@ -46,6 +46,14 @@ function Category() {
                         <hr />
                         <div className='mx-5'><ViewCard /></div>
                     </div>
+                    <div className='mt-2 p-3' >
+                        <div className='d-flex mt-4'>
+                            <h3 className='mt-3 ms-5'>Chinese Foods</h3>
+                            <Button variant="outline-primary me-3" style={{ width: '80px', height: '50px' }}><FontAwesomeIcon icon={faTrash} /></Button>{' '}
+                        </div>
+                        <hr />
+                        <div className='mx-5'><ViewCard /></div>
+                    </div>
 
                 </div>
                 <div className="col-md-1"></div>
