@@ -68,22 +68,16 @@ function About() {
             </Card.Body>
           </Card>
         </div>
-
-
       </div>
-
-
       <div className="col-md-1"></div>
-
-      <div className="row mt-5 " style={{backgroundImage:'https://i.pinimg.com/originals/e0/32/8b/e0328bbce1e96b6cf147000dca35d4a9.jpg'}}>
-        <div className="col-md-12 m-5">
-          <div className='container-fluid w-75 shadow rounded bg-light' >
-          <iframe width="866" height="487" src="https://www.youtube.com/embed/8L7V1eTaTnw" title="CHICKEN TIKKA NO OVEN | CHICKEN TIKKA KEBAB ON TAWA | CHICKEN TIKKA RECIPE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
+      <div className="row">
+        <div className="col-md-2"></div>
+        <div className="col-md-10 w-75 mt-5">
+        <iframe width="866" height="487" src="https://www.youtube.com/embed/8L7V1eTaTnw" title="CHICKEN TIKKA NO OVEN | CHICKEN TIKKA KEBAB ON TAWA | CHICKEN TIKKA RECIPE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-
-
+        <div className="col-md-2"></div>
       </div>
+
 
       <Footer />
     </>

@@ -6,8 +6,28 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { deleteRecipeApi } from '../../services/allApi';
 
+<<<<<<< HEAD
 function RecipeCard({ displayRecipe, onDelete }) {
   const [lgShow, setLgShow] = useState(false);
+=======
+
+
+
+function RecipeCard({displayRecipe,setDeleteRecipeStatus}) {
+
+  const [lgShow, setLgShow] = useState(false);
+    // const [show, setShow] = useState(false);
+
+    // const handleClose = () => setShow(false);
+    // const handleShow = () => setShow(true);
+
+    const handleDelete=async(id)=>{
+      const result=await deleteRecipeApi(id)
+      console.log(result);
+      if(result.status >=200 && result.status <300){
+        setDeleteRecipeStatus(result.data)
+      }
+>>>>>>> 4fe689269fe413056b0fa657477a30b86dbea676
 
   const handleDelete = async (id) => {
     const result = await deleteRecipeApi(id);
@@ -32,7 +52,12 @@ function RecipeCard({ displayRecipe, onDelete }) {
         </Card.Body>
       </Card>
 
+<<<<<<< HEAD
       <Modal
+=======
+
+    <Modal
+>>>>>>> 4fe689269fe413056b0fa657477a30b86dbea676
         size="lg"
         show={lgShow}
         onHide={() => setLgShow(false)}
