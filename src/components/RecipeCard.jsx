@@ -7,8 +7,7 @@ import Button from 'react-bootstrap/Button';
 import { deleteRecipeApi } from '../../services/allApi';
 
 
-function RecipeCard({ displayRecipe, onDelete }) {
-  const [lgShow, setLgShow] = useState(false);
+
 
 
 
@@ -53,8 +52,7 @@ function RecipeCard({displayRecipe,setDeleteRecipeStatus}) {
       </Card>
 
 
-      <Modal>
-
+     
 
     <Modal
 
@@ -92,8 +90,10 @@ function RecipeCard({displayRecipe,setDeleteRecipeStatus}) {
           </div>
         </Modal.Body>
       </Modal>
+    
     </>
   );
-}
-
+    }
+  }
 export default RecipeCard;
+    
