@@ -73,7 +73,7 @@ function Add({setAddStatus}) {
 
 
     // ||!Description||!Ingrediants||!Category||!RecipeImg||!url
-   if (!Email||!RecipeName)
+   if (!Email||!RecipeName||!Description||!Ingrediants||!Category||!RecipeImg||!url)
     {
       
       toast.info('plz fill the form completely')

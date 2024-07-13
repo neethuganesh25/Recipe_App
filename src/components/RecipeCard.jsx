@@ -9,7 +9,7 @@ import { deleteRecipeApi } from '../../services/allApi';
 
 
 
-function RecipeCard({displayRecipe,setdeleteRecipeStatus}) {
+function RecipeCard({displayRecipe,setDeleteRecipeStatus}) {
 
   const [lgShow, setLgShow] = useState(false);
     // const [show, setShow] = useState(false);
@@ -21,7 +21,7 @@ function RecipeCard({displayRecipe,setdeleteRecipeStatus}) {
       const result=await deleteRecipeApi(id)
       console.log(result);
       if(result.status >=200 && result.status <300){
-        setdeleteRecipeStatus(result.data)
+        setDeleteRecipeStatus(result.data)
       }
 
     }

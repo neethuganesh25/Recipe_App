@@ -15,3 +15,18 @@ export const getRecipeApi=async()=>{
 export const deleteRecipeApi=async(id)=>{
    return await commonApi('DELETE',`${serverUrl}/recipe/${id}`,{})
 }
+
+//api to add category
+export const addCategoryApi=async(reqBody)=>{
+   return await commonApi('POST',`${serverUrl}/category`,reqBody)
+}
+
+//to get all category from 
+export  const allCategoryApi=async()=>{
+   return await commonApi('GET',`${serverUrl}/category`,"")
+}
+
+//to delete a category
+export const deleteCategoryApi=async(id)=>{
+   return await commonApi('DELETE',`${serverUrl}/category/${id}`,{})
+}
