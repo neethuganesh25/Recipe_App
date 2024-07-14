@@ -5,6 +5,7 @@ import { Card } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { deleteRecipeApi } from '../../services/allApi';
+import { Link } from 'react-router-dom';
 
 
 
@@ -33,6 +34,32 @@ function RecipeCard({displayRecipe,setDeleteRecipeStatus}) {
     if (result.status >= 200 && result.status < 300) {
       onDelete(id);  // Call the onDelete prop to notify parent
     }
+
+
+    // const PassRecipeId=(e,id)=>{
+    //   console.log("clicked:",id);
+    //   e.dataTransfer.setData("ID",id)
+    // }
+  return (
+    <>
+    <Card style={{ width: '90%' }} className='my-5'>
+      <Card.Img variant="top" onClick={setLgShow} src={displayRecipe?.RecipeImg} width={'100%'} height={'300px'} className='p-3 rounded ' />
+      <Card.Body>
+        <Card.Title>{displayRecipe?.RecipeName}</Card.Title>
+        <Card.Text>
+       
+        </Card.Text>
+        <div className='d-flex justify-content-between'>
+        <Button variant="outline-primary me-3 w-25" onClick={()=>handleDelete(displayRecipe?.id)}><FontAwesomeIcon icon={faTrash} /></Button>{' '}
+        <Button variant="outline-info me-3 w-25"><Link to={`/EditRecipe/${displayRecipe?.id}`}><FontAwesomeIcon icon={faPenToSquare}  /></Link></Button>
+        {/* <Button onClick={(e)=>PassRecipeId(e,displayRecipe?.id)} variant="outline-info me-3 w-25"><Link to={`/EditRecipe`}><FontAwesomeIcon icon={faPenToSquare}  /></Link></Button> */}
+        <Button variant="outline-success w-25"><FontAwesomeIcon icon={faHeart} /></Button>{' '}
+    
+        </div>
+        
+      </Card.Body>
+    </Card>
+
   };
 
   return (

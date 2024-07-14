@@ -11,6 +11,7 @@ import Login from './components/Login'
 import Meal from './components/Meal'
 import Category from './components/Category'
 import Recipe from './components/Recipe'
+import EditRecipe from './components/EditRecipe'
 
 
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/recipes" element={<Meal/>}  />
         <Route path='/mainhome' element={<MainHome/>}/>
         <Route  path="/category" element={<Category/>}/>
+        <Route  path="/editrecipe/:id" element={<EditRecipe/>}/>
         </Routes>
         
         
