@@ -29,7 +29,7 @@ function Login() {
         // Mock login process
         setTimeout(() => {
             // Simulate successful login
-            if (username === 'test@example.com' && password === 'password123') {
+            if (username === 'test@example.com' && password === 'password') {
                 toast.success('Login successful!');
                 navigate('/home');
             } else {
