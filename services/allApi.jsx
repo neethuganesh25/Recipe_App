@@ -30,3 +30,13 @@ export  const allCategoryApi=async()=>{
 export const deleteCategoryApi=async(id)=>{
    return await commonApi('DELETE',`${serverUrl}/category/${id}`,{})
 }
+
+//api to get a RecipeDetails
+export const getARecipeApi=async(id)=>{
+   return await commonApi('GET',`${serverUrl}/recipe/${id}`,{})
+}
+
+//api to update RecipeDetails
+export const updateRecipeApi=async(id,reqBody)=>{
+   return await commonApi('PUT',`${serverUrl}/recipe/${id}`,reqBody)
+}

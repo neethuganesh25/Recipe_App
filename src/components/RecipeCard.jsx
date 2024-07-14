@@ -5,6 +5,7 @@ import { Card } from 'react-bootstrap'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { deleteRecipeApi } from '../../services/allApi';
+import { Link } from 'react-router-dom';
 
 
 
@@ -25,6 +26,11 @@ function RecipeCard({displayRecipe,setDeleteRecipeStatus}) {
       }
 
     }
+
+    // const PassRecipeId=(e,id)=>{
+    //   console.log("clicked:",id);
+    //   e.dataTransfer.setData("ID",id)
+    // }
   return (
     <>
     <Card style={{ width: '90%' }} className='my-5'>
@@ -36,7 +42,8 @@ function RecipeCard({displayRecipe,setDeleteRecipeStatus}) {
         </Card.Text>
         <div className='d-flex justify-content-between'>
         <Button variant="outline-primary me-3 w-25" onClick={()=>handleDelete(displayRecipe?.id)}><FontAwesomeIcon icon={faTrash} /></Button>{' '}
-        <Button variant="outline-info me-3 w-25"><FontAwesomeIcon icon={faPenToSquare}  /></Button>
+        <Button variant="outline-info me-3 w-25"><Link to={`/EditRecipe/${displayRecipe?.id}`}><FontAwesomeIcon icon={faPenToSquare}  /></Link></Button>
+        {/* <Button onClick={(e)=>PassRecipeId(e,displayRecipe?.id)} variant="outline-info me-3 w-25"><Link to={`/EditRecipe`}><FontAwesomeIcon icon={faPenToSquare}  /></Link></Button> */}
         <Button variant="outline-success w-25"><FontAwesomeIcon icon={faHeart} /></Button>{' '}
     
         </div>
