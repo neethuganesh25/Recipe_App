@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useState, useEffect } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import { updateRecipeApi } from '../../services/allApi'; // Import your API function
@@ -101,7 +101,7 @@ function EditRecipe({ recipe, onClose, onSave }) {
 }
 
 export default EditRecipe;
-=======
+
 import React, { useEffect } from 'react'
 import { faBowlFood, faUpload } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -271,4 +271,4 @@ function EditRecipe() {
 }
 
 export default EditRecipe
->>>>>>> 3059c5791342b706927f4b2aecedecf1262e6fc3
+
