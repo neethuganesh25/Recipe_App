@@ -16,7 +16,7 @@ function Header({ favoriteCount }) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" style={{ width: "100%" }}>
           <Nav className="ms-auto d-flex justify-content-center align-items-center">
-            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/about">About Us</Nav.Link>
             <Nav.Link href="/mainhome">Recipes</Nav.Link>
             <Nav.Link href="favorites">

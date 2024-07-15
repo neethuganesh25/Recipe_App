@@ -35,10 +35,9 @@ function App() {
         <Route path="/mainhome/*" element={<MainHome/>}/>
         <Route  path="/category" element={<Category/>}/>
         <Route  path="/editrecipe/:id" element={<EditRecipe/>}/>
-<<<<<<< HEAD
+
         <Route path="/favorites" element={<FavoritesPage/>} />
-=======
->>>>>>> 3059c5791342b706927f4b2aecedecf1262e6fc3
+
         </Routes>
         
         

@@ -21,32 +21,13 @@ function RecipeCard({ displayRecipe, setDeleteRecipeStatus, updateFavoriteCount,
     //   console.log("clicked:",id);
     //   e.dataTransfer.setData("ID",id)
     // }
-  return (
-    <>
-    <Card style={{ width: '90%' }} className='my-5'>
-      <Card.Img variant="top" onClick={setLgShow} src={displayRecipe?.RecipeImg} width={'100%'} height={'300px'} className='p-3 rounded ' />
-      <Card.Body>
-        <Card.Title>{displayRecipe?.RecipeName}</Card.Title>
-        <Card.Text>
-       
-        </Card.Text>
-        <div className='d-flex justify-content-between'>
-        <Button variant="outline-primary me-3 w-25" onClick={()=>handleDelete(displayRecipe?.id)}><FontAwesomeIcon icon={faTrash} /></Button>{' '}
-        <Button variant="outline-info me-3 w-25"><Link to={`/EditRecipe/${displayRecipe?.id}`}><FontAwesomeIcon icon={faPenToSquare}  /></Link></Button>
-        {/* <Button onClick={(e)=>PassRecipeId(e,displayRecipe?.id)} variant="outline-info me-3 w-25"><Link to={`/EditRecipe`}><FontAwesomeIcon icon={faPenToSquare}  /></Link></Button> */}
-        <Button variant="outline-success w-25"><FontAwesomeIcon icon={faHeart} /></Button>{' '}
-    
-        </div>
-        
-      </Card.Body>
-    </Card>
-
-  };
+  
+}
 
   return (
     <>
       <Card style={{ width: '90%' }} className='my-5'>
-        <Card.Img variant="top" onClick={() => setLgShow(true)} src={displayRecipe?.RecipeImg} />
+        <Card.Img variant="top" onClick={() => setLgShow(true)} src={displayRecipe?.RecipeImg} style={{height:'50vh',width:'100%'}}/>
         <Card.Body>
           <Card.Title>{displayRecipe?.RecipeName}</Card.Title>
           <div className='d-flex justify-content-between'>
@@ -95,6 +76,7 @@ function RecipeCard({ displayRecipe, setDeleteRecipeStatus, updateFavoriteCount,
         </Modal.Footer>
       </Modal>
     </>
+    
   );
 }
 
