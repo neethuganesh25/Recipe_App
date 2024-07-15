@@ -6,66 +6,45 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { deleteRecipeApi } from '../../services/allApi';
 
-
-
-
-
-
-
-function RecipeCard({displayRecipe,setDeleteRecipeStatus}) {
-
+function RecipeCard({ displayRecipe, setDeleteRecipeStatus, updateFavoriteCount, openEditModal }) {
   const [lgShow, setLgShow] = useState(false);
-    // const [show, setShow] = useState(false);
-
-    // const handleClose = () => setShow(false);
-    // const handleShow = () => setShow(true);
-
-    const handleDelete=async(id)=>{
-      const result=await deleteRecipeApi(id)
-      console.log(result);
-      if(result.status >=200 && result.status <300){
-        setDeleteRecipeStatus(result.data)
-      }
-
 
   const handleDelete = async (id) => {
     const result = await deleteRecipeApi(id);
     if (result.status >= 200 && result.status < 300) {
-      onDelete(id);  // Call the onDelete prop to notify parent
+      setDeleteRecipeStatus(true);
     }
   };
 
   return (
     <>
       <Card style={{ width: '90%' }} className='my-5'>
-        <Card.Img variant="top" onClick={() => setLgShow(true)} src={displayRecipe?.RecipeImg} width={'100%'} height={'300px'} className='p-3 rounded' />
+        <Card.Img variant="top" onClick={() => setLgShow(true)} src={displayRecipe?.RecipeImg} />
         <Card.Body>
           <Card.Title>{displayRecipe?.RecipeName}</Card.Title>
           <div className='d-flex justify-content-between'>
-            <Button variant="outline-primary me-3 w-25" onClick={() => handleDelete(displayRecipe?.id)}>
+            <Button variant="outline-primary" onClick={() => handleDelete(displayRecipe?.id)}>
               <FontAwesomeIcon icon={faTrash} />
             </Button>
-            <Button variant="outline-info me-3 w-25"><FontAwesomeIcon icon={faPenToSquare} /></Button>
-            <Button variant="outline-success w-25"><FontAwesomeIcon icon={faHeart} /></Button>
+            <Button variant="outline-info" onClick={() => openEditModal(displayRecipe)}>
+              <FontAwesomeIcon icon={faPenToSquare} />
+            </Button>
+            <Button
+              variant="outline-success"
+              onClick={() => updateFavoriteCount(displayRecipe)}
+            >
+              <FontAwesomeIcon
+                icon={faHeart}
+                className={displayRecipe.isFavorite ? 'text-danger' : 'text-secondary'}
+              />
+            </Button>
           </div>
         </Card.Body>
       </Card>
 
-
-     
-
-    <Modal
-
-        size="lg"
-        show={lgShow}
-        onHide={() => setLgShow(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
+      <Modal size="lg" show={lgShow} onHide={() => setLgShow(false)}>
         <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg">
-            {displayRecipe?.RecipeName}
-            <p className='fs-4'>Category: {displayRecipe?.Category}</p>
-          </Modal.Title>
+          <Modal.Title>{displayRecipe?.RecipeName}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="row">
@@ -74,27 +53,22 @@ function RecipeCard({displayRecipe,setDeleteRecipeStatus}) {
             </div>
             <div className="col-md-6">
               <h4>Cooking Instructions:</h4>
-              <p className='p-2' style={{ textAlign: 'justify' }}>{displayRecipe?.Description}
-                <h6 className='mt-3'> Video Link: {displayRecipe?.url}</h6>
-              </p>
+              <p>{displayRecipe?.Description}</p>
+              <h6>Video Link: {displayRecipe?.url}</h6>
             </div>
-            <div className="row">
-              <div className="col-md-12">
-                <h4>Ingredients:</h4>
-                <p>{displayRecipe?.Ingrediants}</p>
-                <div className='p-2 ms-4'>
-                  <iframe width="866" height="487" src={displayRecipe.url} title="Recipe Video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-                </div>
-              </div>
+            <div className="col-md-12">
+              <h4>Ingredients:</h4>
+              <p>{displayRecipe?.Ingredients}</p>
+              <iframe width="866" height="487" src={displayRecipe?.url} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
             </div>
           </div>
         </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={() => setLgShow(false)}>Close</Button>
+        </Modal.Footer>
       </Modal>
-    
     </>
   );
-    }
-  }
+}
+
 export default RecipeCard;
-
-

@@ -1,4 +1,5 @@
 
+
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Footer from './components/Footer'
@@ -11,10 +12,15 @@ import Login from './components/Login'
 import Meal from './components/Meal'
 import Category from './components/Category'
 import Recipe from './components/Recipe'
+import EditRecipe from './components/EditRecipe'
 
+import { useState } from 'react'
+import FavoritesPage from './components/FavoritesPage'
 
 
 function App() {
+
+
   
   return (
     <>
@@ -26,8 +32,10 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route exact path="/:recipeId" element={<Recipe/>}/>
         <Route path="/recipes" element={<Meal/>}  />
-        <Route path='/mainhome' element={<MainHome/>}/>
+        <Route path="/mainhome/*" element={<MainHome/>}/>
         <Route  path="/category" element={<Category/>}/>
+        <Route  path="/editrecipe/:id" element={<EditRecipe/>}/>
+        <Route path="/favorites" element={<FavoritesPage/>} />
         </Routes>
         
         
