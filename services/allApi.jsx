@@ -39,9 +39,9 @@ export const getARecipeApi=async(id)=>{
 //api to update RecipeDetails
 export const updateRecipeApi=async(id,reqBody)=>{
    return await commonApi('PUT',`${serverUrl}/recipe/${id}`,reqBody)
-<<<<<<< HEAD
+
 }
 
-=======
+
 }
->>>>>>> 3059c5791342b706927f4b2aecedecf1262e6fc3
+
