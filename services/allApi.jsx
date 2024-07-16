@@ -42,3 +42,19 @@ export const updateRecipeApi=async(id,reqBody)=>{
 
 }
 
+
+// API to add feedback
+export const addFeedbackApi = async (reqBody) => {
+   return await commonApi('POST', `${serverUrl}/feedbacks`, reqBody);
+ };
+ 
+ // API to get all feedback
+ export const getFeedbackApi = async () => {
+   return await commonApi('GET', `${serverUrl}/feedbacks`, "");
+ };
+ 
+ // API to delete feedback
+ export const deleteFeedbackApi = async (id) => {
+   return await commonApi('DELETE', `${serverUrl}/feedbacks/${id}`, {});
+ };
+
