@@ -41,4 +41,9 @@ export const updateRecipeApi=async(id,reqBody)=>{
    return await commonApi('PUT',`${serverUrl}/recipe/${id}`,reqBody)
 
 }
+export const getFavoriteRecipesApi = async () => {
+   return await commonApi('GET', `${serverUrl}/recipes`, {});
+ };
+ 
+ 
 

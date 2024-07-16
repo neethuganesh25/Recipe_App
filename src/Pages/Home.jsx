@@ -25,9 +25,8 @@ function Home() {
         <h1 className='mt-5 fs-1 fw-bold'>Huge Selection of Delicios Recipes</h1>
         <p className='mt-5'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, similique quidem adipisci repudiandae libero necessitatibus sunt perspiciatis modi. Esse blanditiis incidunt repellendus sequi illo deserunt iure quisquam vitae explicabo aliquid!</p>
         <div className='d-flex mt-5'>
-         <Link to={'/recipes'}><Button variant="dark w-25" >Explore Latest</Button></Link>
-        <Button variant="outline-dark w-25 ms-3 ">View Random</Button>{' '}
-        </div>
+         <Link to={'/recipes'}><Button variant="dark w-75" >Explore Latest</Button></Link>
+         </div>
       </div>
       <div className="col-md-5 mt-5 ">
         <img className='shadow rounded'  src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?cs=srgb&dl=pexels-ella-olsson-1640772.jpg&fm=jpg" alt="no image" width={'90%'} height={'400px'} />
@@ -109,7 +108,7 @@ function Home() {
       <Card.Body>
         <Card.Title>Lemon Garlic Baked Chicken</Card.Title>
       </Card.Body>
-      <div className="d-flex justify-content-around mt-3">
+      <div className="d-flex justify-content-around mt-1 p-2">
                   <FacebookShareButton url={Url} quote="Lemon Garlic Baked Chicken">
                     <FacebookIcon size={25} round />
                   </FacebookShareButton>
@@ -126,9 +125,9 @@ function Home() {
     <Card className='mt-4 shadow ms-4' style={{ width: '350px' , height:'350px' }}>
       <Card.Img variant="top" src="https://i.ytimg.com/vi/FxLcVJdNt5o/maxresdefault.jpg"  height={'350px'}/>
       <Card.Body>
-        <Card.Title>Lemon Garlic Baked Chicken</Card.Title>
+        <Card.Title>Calamares a la Romana Chicken</Card.Title>
       </Card.Body>
-      <div className="d-flex justify-content-around mt-3">
+      <div className="d-flex justify-content-around mt-1 p-2">
                   <FacebookShareButton url={Url} quote="Lemon Garlic Baked Chicken">
                     <FacebookIcon size={25} round />
                   </FacebookShareButton>
@@ -145,7 +144,7 @@ function Home() {
       <Card.Body>
         <Card.Title>Chinese Fried Noodles</Card.Title>
       </Card.Body>
-      <div className="d-flex justify-content-around mt-3">
+      <div className="d-flex justify-content-around mt-1 p-2">
                   <FacebookShareButton url={Url} quote="Lemon Garlic Baked Chicken">
                     <FacebookIcon size={25} round />
                   </FacebookShareButton>
@@ -162,7 +161,7 @@ function Home() {
       <Card.Body>
         <Card.Title>Italian Eggplant Recipe</Card.Title>
       </Card.Body>
-      <div className="d-flex justify-content-around mt-3">
+      <div className="d-flex justify-content-around mt-1 p-2">
                   <FacebookShareButton url={Url} quote="Lemon Garlic Baked Chicken">
                     <FacebookIcon size={25} round />
                   </FacebookShareButton>
@@ -184,7 +183,7 @@ function Home() {
       <div className="col-md-10 mt-5 d-flex justify-content-center align-items-center flex-column ">
         <h1 className='text-center'>Publish Your recipe for free</h1>
         <p className='text-center mt-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-        <Button variant="dark w-25 my-4 ms-5">Submit Recipe</Button></div>
+        <Link to={'/mainhome'} className='text-center'><Button variant="dark w-100 my-4">Submit Recipe</Button></Link></div>
       <div className="col-md-1"></div>
     </div>
     

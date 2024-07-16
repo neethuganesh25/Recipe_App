@@ -16,8 +16,6 @@ function Category() {
   const [allCategory, setAllCategory] = useState([]);
   const [addStatus, setAddStatus] = useState(false);
   const [recipes, setRecipes] = useState([]);
-  const [favoriteRecipes, setFavoriteRecipes] = useState([]);
-  const [favoriteCount, setFavoriteCount] = useState(0);
 
   const handleClose = () => {
     setShow(false);
@@ -63,11 +61,7 @@ function Category() {
   const fetchRecipes = async () => {
     const result = await getRecipeApi();
     if (result && result.data) {
-      const recipesWithFavorites = result.data.map(recipe => ({
-        ...recipe,
-        isFavorite: false
-      }));
-      setRecipes(recipesWithFavorites);
+      setRecipes(result.data);
     }
   };
 
@@ -81,29 +75,9 @@ function Category() {
     return recipes.filter(recipe => recipe.Category === categoryName);
   };
 
-  const updateFavoriteStatus = (recipe) => {
-    setRecipes(prevRecipes =>
-      prevRecipes.map(r =>
-        r.id === recipe.id
-          ? { ...r, isFavorite: !r.isFavorite }
-          : r
-      )
-    );
-
-    if (recipe.isFavorite) {
-      setFavoriteRecipes(prevFavorites =>
-        prevFavorites.filter(r => r.id !== recipe.id)
-      );
-    } else {
-      setFavoriteRecipes(prevFavorites => [...prevFavorites, recipe]);
-    }
-
-    setFavoriteCount(prevCount => recipe.isFavorite ? prevCount - 1 : prevCount + 1);
-  };
-
   return (
     <>
-      <Header favoriteCount={favoriteCount} />
+      <Header />
       <div className="row">
         <div className="col-md-1"></div>
         <div className="col-md-10">
@@ -115,21 +89,28 @@ function Category() {
           </div>
 
           {allCategory?.length > 0 ?
-            allCategory.map((item) => (
-              <div className='mt-2 p-3' key={item.id}>
-                <div className='d-flex mt-4'>
-                  <h3 className='mt-3 ms-5'>{item.categoryName}</h3>
-                  <Button variant="outline-primary me-3" style={{ width: '80px', height: '50px' }} onClick={() => deleteCategory(item.id)}>
-                    <FontAwesomeIcon icon={faTrash} />
-                  </Button>
+            allCategory.map((item) => {
+              const filteredRecipes = filterRecipesByCategory(item.categoryName);
+              return (
+                <div className='mt-2 p-3' key={item.id}>
+                  <div className='d-flex mt-4'>
+                    <h3 className='mt-3 ms-5'>{item.categoryName}</h3>
+                    <Button variant="outline-primary me-3" className='ms-auto' style={{ width: '80px', height: '50px' }} onClick={() => deleteCategory(item.id)}>
+                      <FontAwesomeIcon icon={faTrash} />
+                    </Button>
+                  </div>
+                  <hr />
+                  <div className='mx-5'>
+                    {filteredRecipes.length > 0 ? (
+                      <ViewCard recipes={filteredRecipes} />
+                    ) : (
+                      <p className='text-center text-danger'>No Recipes Added</p>
+                    )}
+                  </div>
                 </div>
-                <hr />
-                <div className='mx-5'>
-                  <ViewCard recipes={filterRecipesByCategory(item.categoryName)} updateFavoriteStatus={updateFavoriteStatus} />
-                </div>
-              </div>
-            ))
-            : null
+              );
+            })
+            : <p className='text-center text-danger'>No Categories Available</p>
           }
         </div>
         <div className="col-md-1"></div>

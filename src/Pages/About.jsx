@@ -14,7 +14,8 @@ function About() {
       <div className="row">
         <div className="col-md-1"></div>
         <div className="col-md-4">
-          <img className='border shadow rounded-4 mt-5' src="https://images.unsplash.com/photo-1566312235254-d4b52d8fb053?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmVjaXBlc3xlbnwwfHwwfHx8MA%3D%3D"
+          <img className='border w-100 shadow rounded-4 mt-5'
+           src="https://images.unsplash.com/photo-1566312235254-d4b52d8fb053?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmVjaXBlc3xlbnwwfHwwfHx8MA%3D%3D"
             height={300} alt="" />
         </div>
         <div className="col-md-5">
@@ -28,7 +29,7 @@ function About() {
 
         <div className="col-md-2"></div>
         <div className="col-md-3">
-          <Card className='mt-5 ' style={{ width: '80%' }}>
+          <Card className='mt-5  ' style={{ width: '80%' }}>
             <Card.Img variant="top" src="https://images.unsplash.com/photo-1609742022736-46c49c147da9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHJlY2lwZXMlMjBpdGVtc3xlbnwwfHwwfHx8MA%3D%3D" />
             <Card.Body>
               <Card.Title>Card Title</Card.Title>
@@ -36,14 +37,14 @@ function About() {
 
                 Some quick example text to build on the card title and make up the
                 bulk of the card's content.
-                <Ratings rating={cardRatings[2]} />
+                <Ratings   rating={cardRatings[2]} />
               </Card.Text>
 
             </Card.Body>
           </Card>
         </div>
         <div className="col-md-3">
-          <Card className='mt-5 ' style={{ width: '80%' }}>
+          <Card className='mt-5  ' style={{ width: '80%' }}>
             <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2018/08/30/10/22/plum-cake-3641833_640.jpg" />
             <Card.Body>
               <Card.Title>Card Title</Card.Title>

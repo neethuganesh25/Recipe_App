@@ -1,13 +1,12 @@
-import { faHeart, faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { Card } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { deleteRecipeApi } from '../../services/allApi';
-import { Link } from 'react-router-dom';
 
-function RecipeCard({ displayRecipe, setDeleteRecipeStatus, updateFavoriteCount, openEditModal }) {
+function RecipeCard({ displayRecipe, setDeleteRecipeStatus, openEditModal }) {
   const [lgShow, setLgShow] = useState(false);
 
   const handleDelete = async (id) => {
@@ -15,36 +14,20 @@ function RecipeCard({ displayRecipe, setDeleteRecipeStatus, updateFavoriteCount,
     if (result.status >= 200 && result.status < 300) {
       setDeleteRecipeStatus(true);
     }
-
-
-    // const PassRecipeId=(e,id)=>{
-    //   console.log("clicked:",id);
-    //   e.dataTransfer.setData("ID",id)
-    // }
-  
-}
+  };
 
   return (
     <>
-      <Card style={{ width: '90%' }} className='my-5'>
-        <Card.Img variant="top" onClick={() => setLgShow(true)} src={displayRecipe?.RecipeImg} style={{height:'50vh',width:'100%'}}/>
+      <Card style={{ width: '90%', height: '70vh' }} className='my-5'>
+        <Card.Img variant="top" onClick={() => setLgShow(true)} src={displayRecipe?.RecipeImg} style={{ width: '100%', height: '90vh' }} />
         <Card.Body>
           <Card.Title>{displayRecipe?.RecipeName}</Card.Title>
           <div className='d-flex justify-content-between'>
-            <Button variant="outline-primary" onClick={() => handleDelete(displayRecipe?.id)}>
+            <Button variant="outline-primary" className='w-25' onClick={() => handleDelete(displayRecipe?.id)}>
               <FontAwesomeIcon icon={faTrash} />
             </Button>
-            <Button variant="outline-info" onClick={() => openEditModal(displayRecipe)}>
+            <Button variant="outline-info" className='w-25' onClick={() => openEditModal(displayRecipe)}>
               <FontAwesomeIcon icon={faPenToSquare} />
-            </Button>
-            <Button
-              variant="outline-success"
-              onClick={() => updateFavoriteCount(displayRecipe)}
-            >
-              <FontAwesomeIcon
-                icon={faHeart}
-                className={displayRecipe.isFavorite ? 'text-danger' : 'text-secondary'}
-              />
             </Button>
           </div>
         </Card.Body>
@@ -67,16 +50,15 @@ function RecipeCard({ displayRecipe, setDeleteRecipeStatus, updateFavoriteCount,
             <div className="col-md-12">
               <h4>Ingredients:</h4>
               <p>{displayRecipe?.Ingredients}</p>
-              <iframe width="866" height="487" src={displayRecipe?.url} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+              <iframe width="760" height="487" src={displayRecipe?.url} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
             </div>
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={() => setLgShow(false)}>Close</Button>
+          <Button onClick={() => setLgShow(false)} className='w-100'>Close</Button>
         </Modal.Footer>
       </Modal>
     </>
-    
   );
 }
 

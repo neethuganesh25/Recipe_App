@@ -74,9 +74,9 @@ function Add({ setAddStatus }) {
   return (
     <>
       <div className='d-flex mx-5'>
-        <h5 className=' w-25 '>Add new Recipe Here</h5>
-        <button className='btn btn-light rounded border-danger ms-2' style={{ width: '45px', height: '45px' }} onClick={handleShow}>
-          <FontAwesomeIcon icon={faUpload} beat />
+        <h5 className=' w-100 '>Add new Recipe Here</h5>
+        <button className='btn btn-light rounded border-danger ms-2 ' style={{ width: '45px', height: '45px' }} onClick={handleShow}>
+          <FontAwesomeIcon  icon={faUpload} beat />
         </button>
       </div>
 

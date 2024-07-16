@@ -15,11 +15,10 @@ import Recipe from './components/Recipe'
 import EditRecipe from './components/EditRecipe'
 
 import { useState } from 'react'
-import FavoritesPage from './components/FavoritesPage'
 
 
 function App() {
-
+ 
 
   
   return (
@@ -36,8 +35,8 @@ function App() {
         <Route  path="/category" element={<Category/>}/>
         <Route  path="/editrecipe/:id" element={<EditRecipe/>}/>
 
-        <Route path="/favorites" element={<FavoritesPage/>} />
-
+        
+         
         </Routes>
         
         
