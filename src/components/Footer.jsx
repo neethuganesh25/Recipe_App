@@ -2,6 +2,7 @@
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 function Footer() {
@@ -14,10 +15,10 @@ function Footer() {
         
         <h3 className='mt-5' style={{color:'#003c36'}}>RECIPO</h3>
 
-        <p className='mt-3'>Home</p>
-        <p>About</p>
-        <p>Recipes</p>
-        <p>Features</p>
+       <Link to={'/home'} style={{textDecoration:'none'}}><p className='mt-3'>Home</p></Link> 
+       <Link to={'/about'} style={{textDecoration:'none'}}> <p>About</p></Link> 
+       <Link to={'/recipes'} style={{textDecoration:'none'}}> <p>Recipes</p></Link> 
+       
       </div>
       <div className="col-md-5">
         <h4 className='mt-5'style={{color:'#003c36'}}>Contact Us..</h4>
@@ -35,7 +36,7 @@ function Footer() {
            </div>
           </div>
       <div className="col-md-1"></div> 
-      <p className='text-center '>© 2024 Recipo. All Rights Reserved.</p>
+      <p className='text-center mt-3 '>© 2024 Recipo. All Rights Reserved.</p>
     </div>
     
     

@@ -18,7 +18,7 @@ function RecipeCard({ displayRecipe, setDeleteRecipeStatus, openEditModal }) {
 
   return (
     <>
-      <Card style={{ width: '90%', height: '70vh' }} className='my-5'>
+      <Card style={{ width: '90%', height: '60vh' }} className='my-5'>
         <Card.Img variant="top" onClick={() => setLgShow(true)} src={displayRecipe?.RecipeImg} style={{ width: '100%', height: '90vh' }} />
         <Card.Body>
           <Card.Title>{displayRecipe?.RecipeName}</Card.Title>

@@ -2,8 +2,7 @@
 
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import Footer from './components/Footer'
-import Header from './components/Header'
+
 import Home from './Pages/Home'
 import About from './Pages/About'
 import Register from './components/Register'
@@ -13,8 +12,9 @@ import Meal from './components/Meal'
 import Category from './components/Category'
 import Recipe from './components/Recipe'
 import EditRecipe from './components/EditRecipe'
-
 import { useState } from 'react'
+
+import FeedBack from './Pages/FeedBack'
 
 
 function App() {
@@ -35,8 +35,14 @@ function App() {
         <Route  path="/category" element={<Category/>}/>
         <Route  path="/editrecipe/:id" element={<EditRecipe/>}/>
 
+
         
          
+
+        <Route path="/feedback" element={<FeedBack/>} />
+
+
+
         </Routes>
         
         

@@ -1,0 +1,53 @@
+
+
+.feedback-upload-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  /*min-height: 100vh; /* Full viewport height */
+  padding: 20px;
+}
+
+.feedback-form {
+  background-color: #fff; /* White background for the form */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Full width */
+  max-width: 500px; /* Limit the max width */
+}
+
+.feedback-form h2 {
+  margin-bottom: 20px; /* Spacing below heading */
+  color: #333; /* Dark text for readability */
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  border: 1px solid #ced4da; /* Light border */
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%; /* Full width */
+  margin-bottom: 15px; /* Spacing between fields */
+  transition: border-color 0.3s; /* Smooth transition for focus */
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  border-color: #80bdff; /* Highlight border on focus */
+  outline: none; /* Remove default outline */
+}
+
+.feedback-form button {
+  background-color: #007bff; /* Primary button color */
+  color: #fff; /* White text */
+  border: none; /* No border */
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.feedback-form button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}

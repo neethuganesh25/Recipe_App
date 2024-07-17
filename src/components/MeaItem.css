@@ -1,0 +1,42 @@
+/* MealItem.css */
+
+.meal-item-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+}
+
+.meal-card {
+    background-color: #343a40; /* Dark background */
+    color: #fff; /* White text */
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer; /* Pointer on hover */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+    max-width: 200px; /* Card width */
+}
+
+.meal-card:hover {
+    transform: scale(1.05); /* Slightly enlarge card on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.meal-image {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+.meal-title {
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem; /* Adjust title size */
+}
+
+.not-found {
+    color: red;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}

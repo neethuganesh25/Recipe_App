@@ -32,11 +32,13 @@ function About() {
           <Card className='mt-5  ' style={{ width: '80%' }}>
             <Card.Img variant="top" src="https://images.unsplash.com/photo-1609742022736-46c49c147da9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHJlY2lwZXMlMjBpdGVtc3xlbnwwfHwwfHx8MA%3D%3D" />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title>Chinese Hot Pot.</Card.Title>
               <Card.Text>
 
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+              Hot pot or hotpot, also known as steamboat, 
+              is a dish whereby a heat source placed on the 
+              dining table keeps a pot of soup stock simmering.
+               
                 <Ratings   rating={cardRatings[2]} />
               </Card.Text>
 
@@ -47,10 +49,9 @@ function About() {
           <Card className='mt-5  ' style={{ width: '80%' }}>
             <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2018/08/30/10/22/plum-cake-3641833_640.jpg" />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title>Spring Rolls</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+                Spring rolls are rolled appetizers or dim sum commonly found in Chinese and Southeast Asian cuisines
               </Card.Text>
               <Ratings rating={cardRatings[3]} />
             </Card.Body>
@@ -60,10 +61,9 @@ function About() {
           <Card className='mt-5' style={{ width: '80%' }}>
             <Card.Img variant="top" src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=600" />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title>Chow Mein</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+              Chow mein is a dish of Chinese stir-fried noodles with vegetables and sometimes meat or tofu.
               </Card.Text>
               <Ratings rating={cardRatings[4]} />
             </Card.Body>
